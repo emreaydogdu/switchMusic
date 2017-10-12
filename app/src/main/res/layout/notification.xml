@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="8dip"
+        android:layout_marginRight="8dip"
+        android:scaleType="centerInside"
+        tools:ignore="ContentDescription"
+        app:srcCompat="@drawable/gardient_04" />
+
+
+    <LinearLayout
+        android:id="@+id/media_titles"
+        android:layout_width="0.0dip"
+        android:layout_height="48dip"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.0"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="13.0dip">
+
+            <TextView
+                android:id="@+id/nc_brand"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ellipsize="marquee"
+                android:gravity="start|center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingEnd="1.0dip"
+                android:paddingLeft="0.0dip"
+                android:paddingRight="1.0dip"
+                android:paddingStart="0.0dip"
+                android:singleLine="true"
+                android:text="Switch Music"
+                android:textColor="@color/ate_primary_text_light"
+                android:textSize="10.0dip"
+                android:textStyle="bold" />
+            <!--style="@style/FontRobotoRegular"-->
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="19.0dip">
+
+            <TextView
+                android:id="@id/title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:ellipsize="marquee"
+                android:fadeScrollbars="true"
+                android:fadingEdge="horizontal"
+                android:gravity="start|center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingEnd="1.0dip"
+                android:paddingLeft="0.0dip"
+                android:paddingRight="1.0dip"
+                android:paddingStart="0.0dip"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Test Text"
+                android:textColor="@color/ate_primary_text_light"
+                android:textSize="15.0dip" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="16dip">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:duplicateParentState="true"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:gravity="start|center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingEnd="1.0dip"
+                android:paddingLeft="0.0dip"
+                android:paddingRight="1.0dip"
+
+                android:paddingStart="0.0dip"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Test Text"
+                android:textColor="@color/ate_primary_text_light"
+                android:textSize="12.0dip" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/media_titles2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_vertical"
+        android:layout_weight="1"
+        android:minHeight="@dimen/notification_large_icon_height"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:gravity="bottom"
+            android:singleLine="true"
+            android:textAppearance="@style/Theme.Phonograph.Notification.Title"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:singleLine="true"
+            android:textAppearance="@style/Theme.Phonograph.Notification" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        android:layoutDirection="ltr"
+        android:layout_width="wrap_content"
+        android:layout_height="48.0dip"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="8.0dip"
+        android:layout_marginStart="8.0dip"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/nf_prev_button"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/action_prev"
+                android:layout_width="27.0dip"
+                android:layout_height="27.0dip"
+                android:background="@drawable/nf_button_ripple"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                android:rotation="180"
+                app:srcCompat="@drawable/nf_next" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/nf_play_pause_button"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:layout_marginEnd="1.0dip"
+            android:layout_marginStart="1.0dip"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/action_play_pause"
+                android:layout_width="27.0dip"
+                android:layout_height="27.0dip"
+                android:background="@drawable/nf_button_ripple"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                app:srcCompat="@drawable/nf_play" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/nf_next_button"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/action_next"
+                android:layout_width="27.0dip"
+                android:layout_height="27.0dip"
+                android:background="@drawable/nf_button_ripple"
+                android:clickable="false"
+                android:duplicateParentState="true"
+                app:srcCompat="@drawable/nf_next" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/nf_collapse"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_width="40.0dip"
+        android:layout_height="40.0dip"
+        android:layout_marginStart="3.0dip"
+        android:layout_marginEnd="9.0dip"
+        android:layout_marginLeft="3.0dip"
+        android:layout_marginRight="9.0dip">
+
+        <ImageButton
+            android:id="@+id/action_quit"
+            android:background="@drawable/nf_button_ripple"
+            android:clickable="false"
+            android:duplicateParentState="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_close"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/media_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:ignore="UnusedAttribute">
+
+        <!-- media buttons will be added here -->
+        <ImageButton
+            android:id="@+id/action_prev2"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/notification_selector"
+            android:gravity="center"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/action_play_pause2"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/notification_selector"
+            android:gravity="center"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/action_next2"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/notification_selector"
+            android:gravity="center"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</LinearLayout>

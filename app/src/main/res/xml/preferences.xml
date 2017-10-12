@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.emreay.music.preferences.preferences.PreferenceCategorySwitch android:title="@string/pref_header_general">
+
+        <com.emreay.music.preferences.preferences.SimplePreference
+            android:key="start_selection"
+            android:title="@string/pref_title_set_default_start_page"/>
+
+        <com.emreay.music.preferences.preferences.ThemePreference
+            android:key="theme_selector" />
+
+        <com.emreay.music.preferences.preferences.ColorPreference
+            android:key="color_preference" />
+
+        <com.emreay.music.preferences.preferences.SwitchPreference
+            android:summary="@string/pref_summary_colored_notification"
+            android:key="colored_notification" />
+
+    </com.emreay.music.preferences.preferences.PreferenceCategorySwitch>
+
+    <com.emreay.music.preferences.preferences.PreferenceCategorySwitch android:title="@string/pref_header_now_playing_screen">
+
+    </com.emreay.music.preferences.preferences.PreferenceCategorySwitch>
+
+    <com.emreay.music.preferences.preferences.PreferenceCategorySwitch android:title="@string/pref_header_notification">
+
+        <com.emreay.music.preferences.preferences.SwitchPreference
+            android:key="should_color_navigation_bar"
+            android:summary="@string/pref_summary_colored_navigation_bar"
+            android:title="@string/pref_title_navigation_bar" />
+
+        <com.emreay.music.preferences.preferences.SwitchPreference
+            android:summary="@string/pref_summary_colored_notification"
+            android:key="colored_notification" />
+
+    </com.emreay.music.preferences.preferences.PreferenceCategorySwitch>
+
+</PreferenceScreen>
