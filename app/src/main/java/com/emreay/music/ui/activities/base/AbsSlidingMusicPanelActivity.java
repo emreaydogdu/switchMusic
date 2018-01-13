@@ -37,8 +37,7 @@ import butterknife.ButterKnife;
 public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivity implements SlidingUpPanelLayout.PanelSlideListener, CardPlayerFragment.Callbacks {
     public static final String TAG = AbsSlidingMusicPanelActivity.class.getSimpleName();
 
-    @BindView(R.id.sliding_layout)
-    SlidingUpPanelLayout slidingUpPanelLayout;
+    @BindView(R.id.sliding_layout) SlidingUpPanelLayout slidingUpPanelLayout;
 
     private int navigationbarColor;
     private int taskColor;

@@ -63,6 +63,8 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
     private static final int TEST = 2;
 
     @BindView(R.id.navigation_view) NavigationView navigationView;
+    @BindView(R.id.navigation_view2) NavigationView navigationView2;
+
     @BindView(R.id.drawer_layout) DrawerLayout drawerLayout;
 
     @Nullable MainActivityFragmentCallbacks currentFragment;
@@ -79,7 +81,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
             Util.setStatusBarTranslucent(getWindow());
             drawerLayout.setFitsSystemWindows(false);
-            navigationView.setFitsSystemWindows(false);
+            navigationView2.setFitsSystemWindows(false);
             //noinspection ConstantConditions
             findViewById(R.id.drawer_content_container).setFitsSystemWindows(false);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -87,7 +89,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
                 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
                 @Override
                 public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                    navigationView.dispatchApplyWindowInsets(windowInsets);
+                    navigationView2.dispatchApplyWindowInsets(windowInsets);
                     return windowInsets.replaceSystemWindowInsets(0, 0, 0, 0);
                 }
             });
@@ -125,7 +127,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
                 break;
             case TEST:
                 navigationView.setCheckedItem(R.id.nav_test);
-                setCurrentFragment(TestFragment.newInstance());
+                setCurrentFragment(LibraryFragment.newInstance());
                 break;
         }
     }
@@ -171,8 +173,8 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
 
     private void setUpNavigationView() {
         int accentColor = ThemeStore.accentColor(this);
-        NavigationViewUtil.setItemIconColors(navigationView, ATHUtil.resolveColor(this, R.attr.iconColor, ThemeStore.textColorSecondary(this)), accentColor);
-        NavigationViewUtil.setItemTextColors(navigationView, ThemeStore.textColorPrimary(this), accentColor);
+        NavigationViewUtil.setItemIconColors(navigationView2, ATHUtil.resolveColor(this, R.attr.iconColor, ThemeStore.textColorSecondary(this)), accentColor);
+        NavigationViewUtil.setItemTextColors(navigationView2, ThemeStore.textColorPrimary(this), accentColor);
 
         checkSetUpPro();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -293,10 +295,10 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            if (drawerLayout.isDrawerOpen(navigationView)) {
-                drawerLayout.closeDrawer(navigationView);
+            if (drawerLayout.isDrawerOpen(navigationView2)) {
+                drawerLayout.closeDrawer(navigationView2);
             } else {
-                drawerLayout.openDrawer(navigationView);
+                drawerLayout.openDrawer(navigationView2);
             }
             return true;
         }
@@ -305,7 +307,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
 
     @Override
     public boolean handleBackPress() {
-        if (drawerLayout.isDrawerOpen(navigationView)) {
+        if (drawerLayout.isDrawerOpen(navigationView2)) {
             drawerLayout.closeDrawers();
             return true;
         }

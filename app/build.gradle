@@ -42,14 +42,14 @@ android {
             storePassword 'berkan1997'
         }
     }
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.0'
     dataBinding {
         enabled = true
     }
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 26
+        targetSdkVersion 27
 
         renderscriptTargetApi 19
         renderscriptSupportModeEnabled true
@@ -84,7 +84,7 @@ android {
     }
 }
 
-ext { supportLibVersion = '26.1.0' }
+ext { supportLibVersion = '27.0.0' }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -104,6 +104,7 @@ dependencies {
     compile "com.android.support:percent:$supportLibVersion"
     compile "com.android.support:preference-v7:$supportLibVersion"
     compile "com.android.support:preference-v14:$supportLibVersion"
+    compile "com.android.support.constraint:constraint-layout:1.1.0-beta4"
     //    compile 'com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.10.6'
     // TODO: go back to master branch as soon as possible
     compile 'com.crashlytics.sdk.android:crashlytics:2.6.7'

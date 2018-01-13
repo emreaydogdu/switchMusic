@@ -30,12 +30,10 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
 
     private Unbinder unbinder;
 
-    @BindView(R.id.mini_player_title)
-    TextView miniPlayerTitle;
-    @BindView(R.id.mini_player_play_pause_button)
-    ImageView miniPlayerPlayPauseButton;
-    @BindView(R.id.progress_bar)
-    MaterialProgressBar progressBar;
+    @BindView(R.id.mini_player_title) TextView miniPlayerTitle;
+    @BindView(R.id.mini_player_play_pause_button) ImageView miniPlayerPlayPauseButton;
+    @BindView(R.id.progress_bar) MaterialProgressBar progressBar;
+    @BindView(R.id.image) ImageView image;
 
     private PlayPauseDrawable miniPlayerPlayPauseDrawable;
 
@@ -82,6 +80,7 @@ public class MiniPlayerFragment extends AbsMusicServiceFragment implements Music
 
     private void updateSongTitle() {
         miniPlayerTitle.setText(MusicPlayerRemote.getCurrentSong().title);
+        //image.setImageDrawable();
     }
 
     @Override
