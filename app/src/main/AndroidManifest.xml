@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.emreay.music">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.emreay.music">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -14,14 +14,14 @@
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
-        android:name="com.emreay.music.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Phonograph.Light"
         tools:ignore="UnusedAttribute">
-        <activity android:name="com.emreay.music.ui.activities.MainActivity">
+        <activity android:name=".activites.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.MUSIC_PLAYER" />
@@ -92,33 +92,37 @@
                 <data android:mimeType="vnd.android.cursor.dir/audio" />
             </intent-filter>
         </activity>
-        <activity android:name="com.emreay.music.ui.activities.AlbumDetailActivity" />
-        <activity android:name="com.emreay.music.ui.activities.ArtistDetailActivity" />
-        <activity android:name="com.emreay.music.ui.activities.PlaylistDetailActivity" />
-        <activity android:name="com.emreay.music.ui.activities.tageditor.SongTagEditorActivity"
+        <activity android:name=".activites.activities.AlbumDetailActivity" />
+        <activity android:name=".activites.activities.ArtistDetailActivity" />
+        <activity android:name=".activites.activities.PlaylistDetailActivity" />
+        <activity
+            android:name=".activites.activities.tageditor.SongTagEditorActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name="com.emreay.music.ui.activities.tageditor.AlbumTagEditorActivity"
+        <activity
+            android:name=".activites.activities.tageditor.AlbumTagEditorActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name="com.emreay.music.ui.activities.SearchActivity" />
-        <activity android:name="com.emreay.music.ui.activities.SettingsActivity"
+        <activity android:name=".activites.activities.SearchActivity" />
+        <activity
+            android:name=".activites.activities.SettingsActivity"
             android:label="@string/action_settings" />
-        <activity android:name="com.emreay.music.ui.activities.AboutActivity"
+        <activity
+            android:name=".activites.activities.AboutActivity"
             android:label="@string/action_about" />
-        <activity android:name="com.emreay.music.ui.activities.intro.AppIntroActivity"
+        <activity
+            android:name=".activites.activities.intro.AppIntroActivity"
             android:label="@string/intro_label"
             android:theme="@style/Theme.Intro" />
-        <activity android:name="com.emreay.music.ui.activities.bugreport.BugReportActivity"
-            android:label="@string/report_an_issue" />
-        <activity android:name="com.emreay.music.appshortcuts.AppShortcutLauncherActivity"
+        <activity
+            android:name=".appshortcuts.AppShortcutLauncherActivity"
             android:launchMode="singleInstance"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name="com.emreay.music.ui.activities.PurchaseActivity"></activity>
+        <activity android:name=".activites.activities.PurchaseActivity" />
 
         <service
-            android:name="com.emreay.music.service.MusicService"
+            android:name=".service.MusicService"
             android:enabled="true" />
 
-        <receiver android:name="com.emreay.music.service.MediaButtonIntentReceiver">
+        <receiver android:name=".service.MediaButtonIntentReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
@@ -141,14 +145,14 @@
             android:value="GlideModule" />
 
         <!-- Widgets -->
-        <receiver android:name="com.emreay.music.appwidgets.BootReceiver">
+        <receiver android:name=".appwidgets.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.emreay.music.appwidgets.AppWidgetBig"
+            android:name=".appwidgets.AppWidgetBig"
             android:exported="false"
             android:label="@string/app_widget_big_name">
             <intent-filter>
@@ -160,7 +164,7 @@
                 android:resource="@xml/app_widget_big_info" />
         </receiver>
         <receiver
-            android:name="com.emreay.music.appwidgets.AppWidgetClassic"
+            android:name=".appwidgets.AppWidgetClassic"
             android:exported="false"
             android:label="@string/app_widget_classic_name">
             <intent-filter>
@@ -172,7 +176,7 @@
                 android:resource="@xml/app_widget_classic_info" />
         </receiver>
         <receiver
-            android:name="com.emreay.music.appwidgets.AppWidgetSmall"
+            android:name=".appwidgets.AppWidgetSmall"
             android:exported="false"
             android:label="@string/app_widget_small_name">
             <intent-filter>
@@ -184,7 +188,7 @@
                 android:resource="@xml/app_widget_small_info" />
         </receiver>
         <receiver
-            android:name="com.emreay.music.appwidgets.AppWidgetCard"
+            android:name=".appwidgets.AppWidgetCard"
             android:exported="false"
             android:label="@string/app_widget_card_name">
             <intent-filter>
@@ -196,5 +200,13 @@
                 android:resource="@xml/app_widget_card_info" />
         </receiver>
 
+        <activity android:name=".test.TestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+        </activity>
     </application>
+
 </manifest>

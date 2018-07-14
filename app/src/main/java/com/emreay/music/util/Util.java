@@ -3,30 +3,46 @@ package com.emreay.music.util;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.ExifInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
+import android.provider.MediaStore;
 import android.support.annotation.AttrRes;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.graphics.drawable.VectorDrawableCompat;
+import android.util.Base64;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 import com.emreay.music.R;
 import com.kabouzeid.appthemehelper.util.TintHelper;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+
+import static android.content.Context.MODE_PRIVATE;
+
 public class Util {
 
     public static int getActionBarSize(@NonNull Context context) {
@@ -44,19 +60,6 @@ public class Util {
         Point size = new Point();
         display.getSize(size);
         return size;
-    }
-
-    @TargetApi(Build.VERSION_CODES.KITKAT)
-    public static void setStatusBarTranslucent(@NonNull Window window) {
-        window.setFlags(
-                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-    }
-
-    public static void setAllowDrawUnderStatusBar(@NonNull Window window) {
-        window.getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
 
     public static void hideSoftKeyboard(@Nullable Activity activity) {
@@ -132,7 +135,72 @@ public class Util {
         }
     }
 
-    public static void toast (Context context, String text, int duration) {
-        Toast.makeText(context, text, duration).show();
+
+    //  _____ __  __          _____ ______  _____
+    // |_   _|  \/  |   /\   / ____|  ____|/ ____|
+    //   | | | \  / |  /  \ | |  __| |__  | (___
+    //   | | | |\/| | / /\ \| | |_ |  __|  \___ \
+    //  _| |_| |  | |/ ____ \ |__| | |____ ____) |
+    // |_____|_|  |_/_/    \_\_____|______|_____/
+
+    public static Drawable loadImage(Context context, Uri uri, Resources resources){
+        String[] filePathColumn = {MediaStore.Images.Media.DATA};
+        Cursor cursor = context.getContentResolver().query(uri, filePathColumn, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            String picturePath = cursor.getString(columnIndex);
+            cursor.close();
+
+            Bitmap loadedBitmap = BitmapFactory.decodeFile(picturePath);
+
+            ExifInterface exif = null;
+            try {
+                File pictureFile = new File(picturePath);
+                exif = new ExifInterface(pictureFile.getAbsolutePath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            int orientation = ExifInterface.ORIENTATION_NORMAL;
+
+            if (exif != null)
+                orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+
+            switch (orientation) {
+                case ExifInterface.ORIENTATION_ROTATE_90:
+                    loadedBitmap = rotateBitmap(loadedBitmap, 90);
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_180:
+                    loadedBitmap = rotateBitmap(loadedBitmap, 180);
+                    break;
+
+                case ExifInterface.ORIENTATION_ROTATE_270:
+                    loadedBitmap = rotateBitmap(loadedBitmap, 270);
+                    break;
+            }
+            return new BitmapDrawable(resources, loadedBitmap);
+        }
+        return null;
+
     }
+
+    public static void saveImage(Context context, ImageView profile){
+        Bitmap bitmap = profile.getDrawingCache();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream);
+        byte[] imageC = stream.toByteArray();
+        String img_str = Base64.encodeToString(imageC, 0);
+        SharedPreferences preferences = context.getSharedPreferences("myprefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("userphoto", img_str);
+        editor.apply();
+    }
+
+    private static Bitmap rotateBitmap(Bitmap bitmap, int degrees) {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(degrees);
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+    }
+
 }

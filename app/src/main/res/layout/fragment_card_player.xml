@@ -43,7 +43,7 @@
 
                     <fragment
                         android:id="@+id/player_album_cover_fragment"
-                        class="com.emreay.music.ui.fragments.player.PlayerAlbumCoverFragment"
+                        class="com.emreay.music.activites.fragments.player.PlayerAlbumCoverFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
@@ -51,7 +51,7 @@
 
                 <fragment
                     android:id="@+id/playback_controls_fragment"
-                    class="com.emreay.music.ui.fragments.player.card.CardPlayerPlaybackControlsFragment"
+                    class="com.emreay.music.activites.fragments.player.card.CardPlayerPlaybackControlsFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/album_cover_container" />

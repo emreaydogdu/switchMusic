@@ -8,9 +8,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 
 import com.emreay.music.R;
+import com.emreay.music.activites.fragments.mainactivity.folders.FoldersFragment;
+import com.emreay.music.activites.fragments.player.NowPlayingScreen;
 import com.emreay.music.helper.SortOrder;
-import com.emreay.music.ui.fragments.mainactivity.folders.FoldersFragment;
-import com.emreay.music.ui.fragments.player.NowPlayingScreen;
 
 import java.io.File;
 public final class PreferenceUtil {

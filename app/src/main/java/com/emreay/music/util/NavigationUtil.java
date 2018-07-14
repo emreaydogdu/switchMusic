@@ -11,11 +11,11 @@ import android.support.v4.util.Pair;
 import android.widget.Toast;
 
 import com.emreay.music.R;
+import com.emreay.music.activites.activities.AlbumDetailActivity;
+import com.emreay.music.activites.activities.ArtistDetailActivity;
+import com.emreay.music.activites.activities.PlaylistDetailActivity;
 import com.emreay.music.helper.MusicPlayerRemote;
 import com.emreay.music.model.Playlist;
-import com.emreay.music.ui.activities.AlbumDetailActivity;
-import com.emreay.music.ui.activities.ArtistDetailActivity;
-import com.emreay.music.ui.activities.PlaylistDetailActivity;
 public class NavigationUtil {
 
     public static void goToArtist(@NonNull final Activity activity, final int artistId, @Nullable Pair... sharedElements) {

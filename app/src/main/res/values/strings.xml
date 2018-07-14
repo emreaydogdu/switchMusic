@@ -275,12 +275,9 @@
     <string name="playlist_is_empty">Playlist is empty</string>
     <string name="playing_notification_description">The playing notification provides actions for play/pause etc.</string>
     <string name="playing_notification_name">Playing notification</string>
-    <string name="buy">Buy</string>
-    <string name="only_the_first_5_colors_available">Only the first 5 colors are available in the free version.</string>
     <string name="black_theme_is_a_pro_feature">The black theme is Phonograph Pro feature.</string>
     <string name="sleep_timer_is_a_pro_feature">Sleep timer is a Phonograph Pro feature</string>
     <string name="folder_view_is_a_pro_feature">Folder view is a Phonograph Pro feature.</string>
-    <string name="restore_purchase">Restore purchase</string>
     <string name="restoring_purchase">Restoring purchase…</string>
     <string name="could_not_restore_purchase">Could not restore purchase.</string>
     <string name="purchase">Purchase</string>
@@ -294,4 +291,10 @@
     <string name="clear_blacklist">Clear blacklist</string>
     <string name="do_you_want_to_clear_the_blacklist">Do you want to clear the blacklist?</string>
     <string name="pref_summary_blacklist">The content of blacklisted folders is hidden from your library.</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="transition_string">hello</string>
 </resources>

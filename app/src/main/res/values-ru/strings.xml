@@ -266,12 +266,9 @@
     <string name="playlist_is_empty">Плейлист пуст</string>
     <string name="playing_notification_description">С помощью уведомления воспроизведения можно воспроизводить/ставить на паузу и т.д.</string>
     <string name="playing_notification_name">Уведомление воспроизведения</string>
-    <string name="buy">Купить</string>
-    <string name="only_the_first_5_colors_available">Только первые 5 цветов доступны в бесплатной версии.</string>
     <string name="black_theme_is_a_pro_feature">Темная тема это функция Phonograph Pro.</string>
     <string name="sleep_timer_is_a_pro_feature">Таймер сна это функция Phonograph Pro.</string>
     <string name="folder_view_is_a_pro_feature">Просмотр по папкам это функция Phonograph Pro.</string>
-    <string name="restore_purchase">Восстановить покупку</string>
     <string name="restoring_purchase">Восстановление покупки...</string>
     <string name="could_not_restore_purchase">Невозможно восстановить покупку.</string>
     <string name="purchase">Покупка</string>

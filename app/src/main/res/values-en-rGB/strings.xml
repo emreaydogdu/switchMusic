@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_add_to_favorites">Add to favourites</string>
-    <string name="action_remove_from_favorites">Remove from favourites</string>
     <string name="equalizer">Equaliser</string>
     <string name="pref_header_colors">Colours</string>
     <string name="pref_title_navigation_bar">Coloured navigation bar</string>
@@ -20,5 +18,4 @@
     <string name="favorites">Favourites</string>
     <string name="colored_footers">Coloured footers</string>
     <!-- App Shortcuts -->
-    <string name="only_the_first_5_colors_available">Only the first 5 colours are available in the free version.</string>
 </resources>

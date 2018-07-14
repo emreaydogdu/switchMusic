@@ -14,7 +14,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.emreay.music.R;
-import com.emreay.music.ui.activities.MainActivity;
+import com.emreay.music.activites.activities.MainActivity;
 import com.emreay.music.util.PreferenceUtil;
 import com.kabouzeid.appthemehelper.ThemeStore;
 

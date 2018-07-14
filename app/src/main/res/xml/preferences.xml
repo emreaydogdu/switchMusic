@@ -7,6 +7,9 @@
             android:key="start_selection"
             android:title="@string/pref_title_set_default_start_page"/>
 
+        <com.emreay.music.preferences.preferences.LanguagePreference
+            android:key="color_preference" />
+
         <com.emreay.music.preferences.preferences.ThemePreference
             android:key="theme_selector" />
 

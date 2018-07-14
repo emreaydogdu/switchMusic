@@ -26,9 +26,6 @@ import com.emreay.music.model.Playlist;
 import com.emreay.music.model.Song;
 import com.emreay.music.model.lyrics.AbsSynchronizedLyrics;
 
-import org.jaudiotagger.audio.AudioFileIO;
-import org.jaudiotagger.tag.FieldKey;
-
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
@@ -280,7 +277,7 @@ public class MusicUtil {
         File file = new File(song.data);
 
         try {
-            lyrics = AudioFileIO.read(file).getTagOrCreateDefault().getFirst(FieldKey.LYRICS);
+            //lyrics = AudioFileIO.read(file).getTagOrCreateDefault().getFirst(FieldKey.LYRICS);
         } catch (Exception e) {
             e.printStackTrace();
         }

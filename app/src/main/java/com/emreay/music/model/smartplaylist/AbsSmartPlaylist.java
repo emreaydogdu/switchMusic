@@ -8,9 +8,6 @@ import android.support.annotation.Nullable;
 import com.emreay.music.R;
 import com.emreay.music.model.AbsCustomPlaylist;
 
-/**
- * @author Karim Abou Zeid (kabouzeid)
- */
 public abstract class AbsSmartPlaylist extends AbsCustomPlaylist {
     @DrawableRes
     public final int iconRes;

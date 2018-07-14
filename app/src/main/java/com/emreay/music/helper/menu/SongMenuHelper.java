@@ -9,14 +9,14 @@ import android.view.View;
 import android.widget.PopupMenu;
 
 import com.emreay.music.R;
+import com.emreay.music.activites.activities.tageditor.AbsTagEditorActivity;
+import com.emreay.music.activites.activities.tageditor.SongTagEditorActivity;
 import com.emreay.music.dialogs.AddToPlaylistDialog;
 import com.emreay.music.dialogs.DeleteSongsDialog;
 import com.emreay.music.dialogs.SongDetailDialog;
 import com.emreay.music.helper.MusicPlayerRemote;
 import com.emreay.music.interfaces.PaletteColorHolder;
 import com.emreay.music.model.Song;
-import com.emreay.music.ui.activities.tageditor.AbsTagEditorActivity;
-import com.emreay.music.ui.activities.tageditor.SongTagEditorActivity;
 import com.emreay.music.util.MusicUtil;
 import com.emreay.music.util.NavigationUtil;
 

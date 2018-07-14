@@ -67,6 +67,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+//import com.bumptech.glide.BitmapRequestBuilder;
+//import com.bumptech.glide.Glide;
+//import com.bumptech.glide.request.animation.GlideAnimation;
+//import com.bumptech.glide.request.target.SimpleTarget;
+
 public class MusicService extends Service implements SharedPreferences.OnSharedPreferenceChangeListener, Playback.PlaybackCallbacks {
     public static final String TAG = MusicService.class.getSimpleName();
 

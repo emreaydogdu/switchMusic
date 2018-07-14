@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.emreay.music.R;
-import com.emreay.music.ui.activities.MainActivity;
+import com.emreay.music.activites.activities.MainActivity;
 import com.emreay.music.util.PreferenceUtil;
 import com.kabouzeid.appthemehelper.ThemeStore;
 public class ColorPreference extends Preference implements View.OnClickListener {

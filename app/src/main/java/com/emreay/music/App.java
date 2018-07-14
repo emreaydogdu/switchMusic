@@ -1,15 +1,12 @@
 package com.emreay.music;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.Build;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
-import com.crashlytics.android.Crashlytics;
-import com.crashlytics.android.core.CrashlyticsCore;
 import com.emreay.music.appshortcuts.DynamicShortcutManager;
-
-import io.fabric.sdk.android.Fabric;
 
 public class App extends Application {
     public static final String TAG = App.class.getSimpleName();
@@ -25,12 +22,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         app = this;
-
-        // Set up Crashlytics, disabled for debug builds
-        Crashlytics crashlyticsKit = new Crashlytics.Builder()
-                .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
-                .build();
-        Fabric.with(this, crashlyticsKit);
 
         // Set up dynamic shortcuts
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
@@ -56,6 +47,11 @@ public class App extends Application {
             public void onBillingInitialized() {
             }
         });
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocalHelper.onAttach(base,"en"));
     }
 
     public static boolean isProVersion() {

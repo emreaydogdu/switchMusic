@@ -3,7 +3,6 @@ package com.emreay.music.adapter.song;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -21,7 +20,6 @@ import com.emreay.music.glide.SongGlideRequest;
 import com.emreay.music.helper.MusicPlayerRemote;
 import com.emreay.music.helper.menu.SongMenuHelper;
 import com.emreay.music.helper.menu.SongsMenuHelper;
-import com.emreay.music.interfaces.CabHolder;
 import com.emreay.music.model.Song;
 import com.emreay.music.util.MusicUtil;
 import com.emreay.music.util.NavigationUtil;
@@ -43,16 +41,16 @@ public class SongAdapter extends AbsMultiSelectAdapter<SongAdapter.ViewHolder, S
     protected boolean usePalette = false;
     protected boolean showSectionName = true;
 
-    public SongAdapter(AppCompatActivity activity, ArrayList<Song> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {
-        this(activity, dataSet, itemLayoutRes, usePalette, cabHolder, true);
+    public SongAdapter(AppCompatActivity activity, ArrayList<Song> dataSet, @LayoutRes int itemLayoutRes) {
+        this(activity, dataSet, itemLayoutRes, true);
     }
 
-    public SongAdapter(AppCompatActivity activity, ArrayList<Song> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder, boolean showSectionName) {
-        super(activity, cabHolder, R.menu.menu_media_selection);
+    public SongAdapter(AppCompatActivity activity, ArrayList<Song> dataSet, @LayoutRes int itemLayoutRes, boolean showSectionName) {
+        super(activity, R.menu.menu_media_selection);
         this.activity = activity;
         this.dataSet = dataSet;
         this.itemLayoutRes = itemLayoutRes;
-        this.usePalette = usePalette;
+        this.usePalette = this.usePalette;
         this.showSectionName = showSectionName;
         setHasStableIds(true);
     }

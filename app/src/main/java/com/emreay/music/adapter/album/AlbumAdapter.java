@@ -3,7 +3,6 @@ package com.emreay.music.adapter.album;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -18,7 +17,6 @@ import com.emreay.music.adapter.base.MediaEntryViewHolder;
 import com.emreay.music.glide.PhonographColoredTarget;
 import com.emreay.music.glide.SongGlideRequest;
 import com.emreay.music.helper.menu.SongsMenuHelper;
-import com.emreay.music.interfaces.CabHolder;
 import com.emreay.music.model.Album;
 import com.emreay.music.model.Song;
 import com.emreay.music.util.MusicUtil;
@@ -39,8 +37,8 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
 
     protected boolean usePalette = false;
 
-    public AlbumAdapter(@NonNull AppCompatActivity activity, ArrayList<Album> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {
-        super(activity, cabHolder, R.menu.menu_media_selection);
+    public AlbumAdapter(@NonNull AppCompatActivity activity, ArrayList<Album> dataSet, @LayoutRes int itemLayoutRes) {
+        super(activity, R.menu.menu_media_selection);
         this.activity = activity;
         this.dataSet = dataSet;
         this.itemLayoutRes = itemLayoutRes;

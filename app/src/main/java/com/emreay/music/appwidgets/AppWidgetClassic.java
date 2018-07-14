@@ -17,12 +17,12 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.emreay.music.R;
+import com.emreay.music.activites.activities.MainActivity;
 import com.emreay.music.appwidgets.base.BaseAppWidget;
 import com.emreay.music.glide.SongGlideRequest;
 import com.emreay.music.glide.palette.BitmapPaletteWrapper;
 import com.emreay.music.model.Song;
 import com.emreay.music.service.MusicService;
-import com.emreay.music.ui.activities.MainActivity;
 import com.emreay.music.util.Util;
 import com.kabouzeid.appthemehelper.util.MaterialValueHelper;
 

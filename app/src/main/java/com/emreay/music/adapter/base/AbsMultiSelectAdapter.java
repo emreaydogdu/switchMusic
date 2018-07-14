@@ -2,30 +2,30 @@ package com.emreay.music.adapter.base;
 
 import android.content.Context;
 import android.support.annotation.MenuRes;
-import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.afollestad.materialcab.MaterialCab;
 import com.emreay.music.R;
-import com.emreay.music.interfaces.CabHolder;
 
 import java.util.ArrayList;
 
 public abstract class AbsMultiSelectAdapter<VH extends RecyclerView.ViewHolder, I> extends RecyclerView.Adapter<VH> implements MaterialCab.Callback {
-    @Nullable
-    private final CabHolder cabHolder;
+
     private MaterialCab cab;
-    private ArrayList<I> checked;
+    private ArrayList<I> checked = new ArrayList<>();
     private int menuRes;
     private final Context context;
 
-    public AbsMultiSelectAdapter(Context context, @Nullable CabHolder cabHolder, @MenuRes int menuRes) {
-        this.cabHolder = cabHolder;
-        checked = new ArrayList<>();
+    public AbsMultiSelectAdapter(Context context, @MenuRes int menuRes) {
         this.menuRes = menuRes;
         this.context = context;
+    }
+
+    public AbsMultiSelectAdapter(AppCompatActivity activity, int menu_media_selection) {
+        context = null;
     }
 
     protected void overrideMultiSelectMenuRes(@MenuRes int menuRes) {
@@ -33,9 +33,7 @@ public abstract class AbsMultiSelectAdapter<VH extends RecyclerView.ViewHolder, 
     }
 
     protected boolean toggleChecked(final int position) {
-        if (cabHolder != null) {
-            openCabIfNecessary();
-
+        if (false) {
             I identifier = getIdentifier(position);
             if (!checked.remove(identifier)) checked.add(identifier);
             notifyItemChanged(position);
@@ -48,14 +46,6 @@ public abstract class AbsMultiSelectAdapter<VH extends RecyclerView.ViewHolder, 
             return true;
         }
         return false;
-    }
-
-    private void openCabIfNecessary() {
-        if (cabHolder != null) {
-            if (cab == null || !cab.isActive()) {
-                cab = cabHolder.openCab(menuRes, this);
-            }
-        }
     }
 
     private void unCheckAll() {

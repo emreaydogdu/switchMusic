@@ -1,10 +1,10 @@
 package com.emreay.music.adapter;
 
+import android.content.Context;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -19,7 +19,6 @@ import com.emreay.music.dialogs.ClearSmartPlaylistDialog;
 import com.emreay.music.dialogs.DeletePlaylistDialog;
 import com.emreay.music.helper.menu.PlaylistMenuHelper;
 import com.emreay.music.helper.menu.SongsMenuHelper;
-import com.emreay.music.interfaces.CabHolder;
 import com.emreay.music.loader.PlaylistSongLoader;
 import com.emreay.music.model.AbsCustomPlaylist;
 import com.emreay.music.model.Playlist;
@@ -43,12 +42,14 @@ public class PlaylistAdapter extends AbsMultiSelectAdapter<PlaylistAdapter.ViewH
     protected final AppCompatActivity activity;
     protected ArrayList<Playlist> dataSet;
     protected int itemLayoutRes;
+    Context context;
 
-    public PlaylistAdapter(AppCompatActivity activity, ArrayList<Playlist> dataSet, @LayoutRes int itemLayoutRes, @Nullable CabHolder cabHolder) {
-        super(activity, cabHolder, R.menu.menu_playlists_selection);
+    public PlaylistAdapter(AppCompatActivity activity, ArrayList<Playlist> dataSet, @LayoutRes int itemLayoutRes, Context context) {
+        super(activity, R.menu.menu_playlists_selection);
         this.activity = activity;
         this.dataSet = dataSet;
         this.itemLayoutRes = itemLayoutRes;
+        this.context = context;
         setHasStableIds(true);
     }
 
@@ -83,6 +84,16 @@ public class PlaylistAdapter extends AbsMultiSelectAdapter<PlaylistAdapter.ViewH
 
         holder.itemView.setActivated(isChecked(playlist));
 
+        if (position%4 == 0){
+            holder.background.setImageResource(R.drawable.gardient_02);
+        } else if (position%4 == 1){
+            holder.background.setImageResource(R.drawable.gardient_05);
+        } else if (position%4 == 2){
+            holder.background.setImageResource(R.drawable.gardient_07);
+        } else if (position%4 == 3){
+            holder.background.setImageResource(R.drawable.gardient_08);
+        }
+
         if (holder.title != null) {
             holder.title.setText(playlist.name);
         }
@@ -100,6 +111,7 @@ public class PlaylistAdapter extends AbsMultiSelectAdapter<PlaylistAdapter.ViewH
         if (holder.image != null) {
             holder.image.setImageResource(getIconRes(playlist));
         }
+
     }
 
     private int getIconRes(Playlist playlist) {

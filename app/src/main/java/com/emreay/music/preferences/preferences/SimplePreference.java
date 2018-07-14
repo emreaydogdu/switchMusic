@@ -8,11 +8,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.emreay.music.R;
 import com.emreay.music.util.PreferenceUtil;
-import com.emreay.music.util.Util;
 
 public class SimplePreference extends Preference implements View.OnClickListener {
 
@@ -65,7 +63,6 @@ public class SimplePreference extends Preference implements View.OnClickListener
                 switch (getKey()) {
                     case "start_selection":
                         //getContext().startActivity(NavigationUtils.getNavigateToStyleSelectorIntent(getContext(), Constants.SETTINGS_STYLE_SELECTOR_NOWPLAYING));
-                        Util.toast(getContext(), "Test1", Toast.LENGTH_SHORT);
                         break;
                     case "bottom_playing_selector":
                         //getContext().startActivity(NavigationUtils.getNavigateToBottomStyleSelectorIntent(getContext(), Constants.SETTINGS_STYLE_SELECTOR_BOTTOMPLAYING));

@@ -3,9 +3,6 @@ package com.emreay.music.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * @author Karim Abou Zeid (kabouzeid)
- */
 public class Playlist implements Parcelable {
     public final int id;
     public final String name;

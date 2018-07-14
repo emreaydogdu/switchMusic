@@ -27,7 +27,7 @@ public class PlayingQueueAdapter extends SongAdapter
     private int current;
 
     public PlayingQueueAdapter(AppCompatActivity activity, ArrayList<Song> dataSet, int current, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {
-        super(activity, dataSet, itemLayoutRes, usePalette, cabHolder);
+        super(activity, dataSet, itemLayoutRes);
         this.current = current;
     }
 

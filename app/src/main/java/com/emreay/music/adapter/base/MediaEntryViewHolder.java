@@ -19,6 +19,10 @@ public class MediaEntryViewHolder extends RecyclerView.ViewHolder implements Vie
     public ImageView image;
 
     @Nullable
+    @BindView(R.id.background)
+    public ImageView background;
+
+    @Nullable
     @BindView(R.id.image_text)
     public TextView imageText;
 

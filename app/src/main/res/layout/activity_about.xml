@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.emreay.music.ui.activities.AboutActivity">
+    tools:context="com.emreay.music.activites.activities.AboutActivity">
 
     <include layout="@layout/status_bar" />
 
@@ -21,8 +20,33 @@
         android:isScrollContainer="true"
         android:scrollbars="none">
 
-        <include layout="@layout/activity_about_content" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
 
+            <include
+                layout="@layout/card_about_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <include
+                layout="@layout/card_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <include
+                layout="@layout/card_support_development"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <include layout="@layout/card_special_thanks" />
+
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

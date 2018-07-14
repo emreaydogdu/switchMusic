@@ -17,11 +17,11 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.emreay.music.R;
+import com.emreay.music.activites.activities.MainActivity;
 import com.emreay.music.glide.SongGlideRequest;
 import com.emreay.music.glide.palette.BitmapPaletteWrapper;
 import com.emreay.music.model.Song;
 import com.emreay.music.service.MusicService;
-import com.emreay.music.ui.activities.MainActivity;
 import com.emreay.music.util.PreferenceUtil;
 
 public class PlayingNotificationImpl24 extends PlayingNotification {

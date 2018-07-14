@@ -10,9 +10,10 @@ import android.util.SparseArray;
 import android.view.ViewGroup;
 
 import com.emreay.music.R;
-import com.emreay.music.ui.fragments.mainactivity.library.pager.AlbumsFragment;
-import com.emreay.music.ui.fragments.mainactivity.library.pager.ArtistsFragment;
-import com.emreay.music.ui.fragments.mainactivity.library.pager.SongsFragment;
+import com.emreay.music.activites.fragments.mainactivity.library.pager.AlbumsFragment;
+import com.emreay.music.activites.fragments.mainactivity.library.pager.ArtistsFragment;
+import com.emreay.music.activites.fragments.mainactivity.library.pager.PlaylistsFragment;
+import com.emreay.music.activites.fragments.mainactivity.library.pager.SongsFragment;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
                 context.getResources().getString(R.string.songs),
                 context.getResources().getString(R.string.albums),
                 context.getResources().getString(R.string.artists),
-                //context.getResources().getString(R.string.playlists)
+                context.getResources().getString(R.string.playlists)
         };
         final MusicFragments[] fragments = MusicFragments.values();
         for (final MusicLibraryPagerAdapter.MusicFragments fragment : fragments) {
@@ -107,8 +108,8 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
     public enum MusicFragments {
         SONG(SongsFragment.class),
         ALBUM(AlbumsFragment.class),
-        ARTIST(ArtistsFragment.class);
-        //PLAYLIST(PlaylistsFragment.class);
+        ARTIST(ArtistsFragment.class),
+        PLAYLIST(PlaylistsFragment.class);
 
         private final Class<? extends Fragment> mFragmentClass;
 

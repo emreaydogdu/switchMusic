@@ -5,96 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/imageBlur"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/header_blur_image_height"
-            android:scaleType="centerCrop"
-            android:src="@drawable/default_album_art"
-            tools:ignore="ContentDescription,UnusedAttribute" />
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="13dp"
-                android:layout_marginLeft="13dp"
-                android:layout_marginStart="13dp"
-                android:elevation="4dp"
-                app:cardCornerRadius="4dp"
-                app:cardUseCompatPadding="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/floatingActionButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|right"
-                    android:clickable="true"
-                    android:visibility="gone"
-                    app:fabSize="mini" />
-
-                <ImageView
-                    android:id="@+id/image"
-                    android:layout_width="123dp"
-                    android:layout_height="123dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/default_album_art"
-                    android:transitionName="@string/transition_album_art"
-                    tools:ignore="ContentDescription,UnusedAttribute" />
-
-            </android.support.v7.widget.CardView>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cardView"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:height="@dimen/title_view_height"
-                    android:fontFamily="@font/nunito_semibold"
-                    android:gravity="center_vertical"
-                    android:singleLine="true"
-                    android:text="Name"
-                    android:textAlignment="viewStart"
-                    android:textSize="24sp"
-                    tools:ignore="UnusedAttribute" />
-
-            </LinearLayout>
-        </android.support.constraint.ConstraintLayout>
-
-    </FrameLayout>
-
-    <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/header_blur_image_height"
-        android:clipToPadding="false"
-        android:divider="@null"
-        android:dividerHeight="0dp"
-        android:scrollbars="none"
-        android:visibility="visible" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -179,5 +89,119 @@
         </FrameLayout>
 
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="9dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="4dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="175dp"
+                    android:layout_height="165dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_album_art"
+                    android:transitionName="@string/transition_album_art"
+                    tools:ignore="ContentDescription,UnusedAttribute" />
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/cardView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:height="@dimen/title_view_height"
+                    android:fontFamily="@font/avenir_black"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="Name"
+                    android:textAlignment="viewStart"
+                    android:textSize="22dp"
+                    tools:ignore="UnusedAttribute" />
+
+                <TextView
+                    android:id="@+id/artist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:height="@dimen/title_view_height"
+                    android:fontFamily="@font/avenir_heavy"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="Name"
+                    android:textAlignment="viewStart"
+                    android:textColor="#9ca2a9"
+                    android:textSize="18dp"
+                    tools:ignore="UnusedAttribute" />
+
+
+            </LinearLayout>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardView" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="260dp"
+        android:background="#f0f0f0"
+        tools:ignore="ContentDescription,HardcodedText" />
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="260dp"
+        android:clipToPadding="false"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:scrollbars="none"
+        android:visibility="visible">
+
+    </com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView>
 
 </FrameLayout>

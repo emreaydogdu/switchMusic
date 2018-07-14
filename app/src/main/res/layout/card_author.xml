@@ -56,13 +56,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/karim_abou_zeid"
+                    android:text="Emre Aydogdu"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/aachen_germany"
+                    android:text="Berlin, Germany"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
             </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.emreay.music.ui.fragments.mainactivity.folders.FoldersFragment">
+    tools:context="com.emreay.music.activites.fragments.mainactivity.folders.FoldersFragment">
 
     <FrameLayout
         android:layout_width="match_parent"

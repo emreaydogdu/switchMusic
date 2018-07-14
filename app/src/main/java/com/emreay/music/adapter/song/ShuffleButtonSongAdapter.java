@@ -3,13 +3,11 @@ package com.emreay.music.adapter.song;
 import android.graphics.Typeface;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.emreay.music.R;
 import com.emreay.music.helper.MusicPlayerRemote;
-import com.emreay.music.interfaces.CabHolder;
 import com.emreay.music.model.Song;
 import com.kabouzeid.appthemehelper.ThemeStore;
 
@@ -17,8 +15,8 @@ import java.util.ArrayList;
 
 public class ShuffleButtonSongAdapter extends AbsOffsetSongAdapter {
 
-    public ShuffleButtonSongAdapter(AppCompatActivity activity, ArrayList<Song> dataSet, @LayoutRes int itemLayoutRes, boolean usePalette, @Nullable CabHolder cabHolder) {
-        super(activity, dataSet, itemLayoutRes, usePalette, cabHolder);
+    public ShuffleButtonSongAdapter(AppCompatActivity activity, ArrayList<Song> dataSet, @LayoutRes int itemLayoutRes) {
+        super(activity, dataSet, itemLayoutRes);
     }
 
     @Override

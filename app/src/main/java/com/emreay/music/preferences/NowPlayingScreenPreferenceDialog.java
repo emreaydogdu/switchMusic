@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.emreay.music.R;
-import com.emreay.music.ui.fragments.player.NowPlayingScreen;
+import com.emreay.music.activites.fragments.player.NowPlayingScreen;
 import com.emreay.music.util.PreferenceUtil;
 import com.emreay.music.util.ViewUtil;
 import com.heinrichreimersoftware.materialintro.view.InkPageIndicator;
